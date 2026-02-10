@@ -1,16 +1,20 @@
-package uc21;
+package uc22;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class StreamForEachDemo {
+public class StreamMapDemo {
 
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> numbers = Arrays.asList(1,2,3,4,5);
 
-        System.out.println("UC2.1 Output:");
+        List<Integer> doubled = numbers.stream()
+                .map(n -> n * 2)
+                .collect(Collectors.toList());
 
-        numbers.stream().forEach(System.out::println);
+        System.out.println("UC2.2 Output:");
+        System.out.println(doubled);
     }
 }
