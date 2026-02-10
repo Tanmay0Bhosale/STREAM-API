@@ -1,20 +1,20 @@
-package uc24;
+package uc25;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
-public class StreamFilterDemo {
+public class StreamFindFirstDemo {
 
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8);
+        List<Integer> numbers = Arrays.asList(3,7,5,8,10);
 
-        List<Integer> evens = numbers.stream()
+        Optional<Integer> firstEven = numbers.stream()
                 .filter(n -> n % 2 == 0)
-                .collect(Collectors.toList());
+                .findFirst();
 
-        System.out.println("UC2.4 Output:");
-        System.out.println(evens);
+        System.out.println("UC2.5 Output:");
+        System.out.println(firstEven.orElse(null));
     }
 }
