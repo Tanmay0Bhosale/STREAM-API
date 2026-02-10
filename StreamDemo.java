@@ -1,22 +1,20 @@
-package uc28;
+package uc29;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class StreamMatchDemo {
+public class StreamSortDemo {
 
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(2,4,6,7);
+        List<Integer> numbers = Arrays.asList(9,3,6,1,8,2);
 
-        boolean allEven = numbers.stream()
-                .allMatch(n -> n % 2 == 0);
+        List<Integer> sortedNumbers = numbers.stream()
+                .sorted()
+                .collect(Collectors.toList());
 
-        boolean anyEven = numbers.stream()
-                .anyMatch(n -> n % 2 == 0);
-
-        System.out.println("UC2.8 Output:");
-        System.out.println("All Even: " + allEven);
-        System.out.println("Any Even: " + anyEven);
+        System.out.println("UC2.9 Output:");
+        System.out.println(sortedNumbers);
     }
 }
