@@ -1,25 +1,25 @@
-package uc26;
+package uc27;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
-public class StreamMinMaxDemo {
+public class StreamSumAvgDemo {
 
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(11,4,7,2,18,6);
+        List<Integer> numbers = Arrays.asList(10,20,30,40);
 
-        Optional<Integer> min = numbers.stream()
-                .filter(n -> n % 2 == 0)
-                .min(Integer::compareTo);
+        int sum = numbers.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
 
-        Optional<Integer> max = numbers.stream()
-                .filter(n -> n % 2 == 0)
-                .max(Integer::compareTo);
+        double avg = numbers.stream()
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
 
-        System.out.println("UC2.6 Output:");
-        System.out.println("Min Even: " + min.orElse(null));
-        System.out.println("Max Even: " + max.orElse(null));
+        System.out.println("UC2.7 Output:");
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + avg);
     }
 }
