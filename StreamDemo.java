@@ -1,25 +1,22 @@
-package uc27;
+package uc28;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class StreamSumAvgDemo {
+public class StreamMatchDemo {
 
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(10,20,30,40);
+        List<Integer> numbers = Arrays.asList(2,4,6,7);
 
-        int sum = numbers.stream()
-                .mapToInt(Integer::intValue)
-                .sum();
+        boolean allEven = numbers.stream()
+                .allMatch(n -> n % 2 == 0);
 
-        double avg = numbers.stream()
-                .mapToInt(Integer::intValue)
-                .average()
-                .orElse(0);
+        boolean anyEven = numbers.stream()
+                .anyMatch(n -> n % 2 == 0);
 
-        System.out.println("UC2.7 Output:");
-        System.out.println("Sum: " + sum);
-        System.out.println("Average: " + avg);
+        System.out.println("UC2.8 Output:");
+        System.out.println("All Even: " + allEven);
+        System.out.println("Any Even: " + anyEven);
     }
 }
