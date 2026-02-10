@@ -1,20 +1,25 @@
-package uc25;
+package uc26;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public class StreamFindFirstDemo {
+public class StreamMinMaxDemo {
 
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(3,7,5,8,10);
+        List<Integer> numbers = Arrays.asList(11,4,7,2,18,6);
 
-        Optional<Integer> firstEven = numbers.stream()
+        Optional<Integer> min = numbers.stream()
                 .filter(n -> n % 2 == 0)
-                .findFirst();
+                .min(Integer::compareTo);
 
-        System.out.println("UC2.5 Output:");
-        System.out.println(firstEven.orElse(null));
+        Optional<Integer> max = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .max(Integer::compareTo);
+
+        System.out.println("UC2.6 Output:");
+        System.out.println("Min Even: " + min.orElse(null));
+        System.out.println("Max Even: " + max.orElse(null));
     }
 }
