@@ -1,20 +1,20 @@
-package uc23;
+package uc24;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StreamCollectDemo {
+public class StreamFilterDemo {
 
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(5,10,15,20);
+        List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8);
 
-        List<Integer> result = numbers.stream()
-                .map(n -> n * 2)
+        List<Integer> evens = numbers.stream()
+                .filter(n -> n % 2 == 0)
                 .collect(Collectors.toList());
 
-        System.out.println("UC2.3 Output:");
-        result.forEach(System.out::println);
+        System.out.println("UC2.4 Output:");
+        System.out.println(evens);
     }
 }
